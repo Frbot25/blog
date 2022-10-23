@@ -10,6 +10,11 @@ const router = Router();
  **/
 router.get('/', itemControlleur.getAllItems);
 /**
+ * routes /item 
+ * post create new item 
+ **/
+ router.post('/items', itemControlleur.save);
+/**
  * routes /home
  * Get one item by id
  **/

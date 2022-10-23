@@ -3,12 +3,34 @@
 
 ### --- Afficher les articles
 GET {{baseurl}}/
+### --- add item
+POST {{baseurl}}/items
+Content-Type: application/json
+
+{
+    "title": "frederic.botella@gmail.com",
+    "description": "moi",
+    "url_image": "https://images.assetsdelivery.com/compings_v2/yupiramos/yupiramos2004/yupiramos200436847.jpg",
+    "url_video": "",
+    "user_id": "1",
+    "category_id": "1"
+}
 ### --- Afficher un article par son id
 GET {{baseurl}}/items/1
 ### --- modifier un article par son id
-PUT {{baseurl}}/items/1
+PUT {{baseurl}}/items/3
+Content-Type: application/json
+
+{
+    "title": "Tout sur les jeux vidéos 4",
+    "description": "lol",
+    "url_image": "https://images.assetsdelivery.com/compings_v2/yupiramos/yupiramos2004/yupiramos200436847.jpg",
+    "url_video": "1",
+    "user_id": "1",
+    "category_id": "1"
+}
 ### --- Supprimer un article par son id
-DELETE  {{baseurl}}/items/1
+DELETE  {{baseurl}}/items/3
 ### --- Afficher tous les users
 GET {{baseurl}}/users
 ### --- Login user

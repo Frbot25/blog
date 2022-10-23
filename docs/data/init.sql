@@ -47,7 +47,7 @@ CREATE TABLE "item"(
 	title TEXT NOT NULL,
 	"description" TEXT NOT NULL,
 	"url_image" TEXT NOT NULL,
-	"url_video" TEXT NOT NULL UNIQUE,
+	"url_video" TEXT,
 	createdAt TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updatedAt TIMESTAMPTZ,
     "user_id" INT NOT NULL REFERENCES "user"(id),
@@ -75,4 +75,10 @@ CREATE TABLE user_prefer_item(
 );
  insert into role ("role") values 
     ('utilisateur');
+
+insert into category (name, description) values 
+    ('Jeux vidéo', 'découvrir les jeux vidéos'),--1
+    ('Vidéo', 'lien vidéo'),--2
+    ('Site', 'site internet')--3
+;
 COMMIT;
