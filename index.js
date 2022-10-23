@@ -10,6 +10,7 @@ const cors = require('cors');
 app.use(cors());
 // express json
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 // router
 app.use('/', router);
 

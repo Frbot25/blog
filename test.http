@@ -11,10 +11,34 @@ PUT {{baseurl}}/items/1
 DELETE  {{baseurl}}/items/1
 ### --- Afficher tous les users
 GET {{baseurl}}/users
+### --- Login user
+POST {{{baseurl}}}/login
+Content-Type: application/json
+
+{
+    "email": "frederic.botella@gmail.com",
+    "password": "1234",
+}
+### --- add user
+POST {{baseurl}}/users
+Content-Type: application/json
+
+{
+    "email": "frederic.botella@gmail.com",
+    "password": "1234",
+    "username": "Fred"
+}
 ### --- Afficher un user par son id
-GET {{baseurl}}/users/1
+GET {{baseurl}}/users/2
 ### --- modifier un user par son id
 PUT {{baseurl}}/users/1
+Content-Type: application/json
+
+{
+    "email": "frederic.botella@gmail.com",
+    "password": "1234",
+    "username": "Fredo"
+}
 ### --- Supprimer un user par son id
 DELETE {{baseurl}}/users/1
 ### --- Afficher toutes les catégories

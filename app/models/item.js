@@ -1,3 +1,4 @@
+const pool = require('../database')
 class Items {
     constructor(obj = {}) {
         for (const propname in obj) {
@@ -5,6 +6,8 @@ class Items {
         }
     }
     static async findAllItems() {
+        const {rows} = await pool.query(`SELECT * FROM item ORDER BY createdAt DESC`);
+            return rows.map(row => new Items(row));
 
     }
     static async findOneItem() {

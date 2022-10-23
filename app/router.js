@@ -29,16 +29,31 @@ router.get('/', itemControlleur.getAllItems);
  * get all users
  **/
  router.get('/users', usersControlleur.getAllUsers );
+  /**
+ * routes /login
+ * Login user
+ **/
+   router.post('/login',  usersControlleur.login);
+ /**
+ * routes /users
+ * get all users
+ **/
+  router.post('/users', usersControlleur.registerUser );
 /**
  * routes /users/:id
  * get one user by id
  **/
  router.get('/users/:id',usersControlleur.getOneUserById)
+ /**
+ * routes /users/:id
+ * get one user by id
+ **/
+  router.post('/users',usersControlleur.getOneUserById)
 /**
  * routes /users/:id
  * put one user by id
  **/
- router.put('/users/:id', usersControlleur.putOneUserById);
+ router.put('/users/:id', usersControlleur.updateUserById);
 /**
  * routes /users/:id
  * delete user by id
