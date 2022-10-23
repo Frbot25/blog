@@ -1,0 +1,30 @@
+@baseurl=http://localhost:3000
+
+
+### --- Afficher les articles
+GET {{baseurl}}/
+### --- Afficher tous les users
+GET {{baseurl}}/users
+### --- Afficher un article par son id
+GET {{baseurl}}/users/1
+### --- modifier un article par son id
+PUT {{baseurl}}/users/1
+### --- Supprimer un article par son id
+DELETE {{baseurl}}/users/1
+### --- Afficher toutes les users
+GET {{baseurl}}/categories
+### --- Afficher unes catégories par son id
+GET {{baseurl}}/categories/1
+### --- Modifier une catégorie par son id
+PUT {{baseurl}}/categories/1
+### --- Effacer une carte par son id
+DELETE  {{baseurl}}/categories/1
+### --- Afficher tous les tags
+GET  {{baseurl}}/tags
+### --- Afficher un tag par son id
+GET  {{baseurl}}/tags/1
+### --- modifier un tag par son id
+PUT   {{baseurl}}/tags/1
+### --- Supprimer un tag par son id
+DELETE  {{baseurl}}/tags/1
+
