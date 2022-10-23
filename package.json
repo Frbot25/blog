@@ -1,0 +1,19 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Api pour le fonctionnement du site Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frbot25/blog.git"
+  },
+  "author": "Frédéric Botella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frbot25/blog/issues"
+  },
+  "homepage": "https://github.com/Frbot25/blog#readme"
+}
