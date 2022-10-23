@@ -10,6 +10,21 @@ const router = Router();
  **/
 router.get('/', itemControlleur.getAllItems);
 /**
+ * routes /home
+ * Get one item by id
+ **/
+ router.get('/items/:id', itemControlleur.getOnItemsById);
+ /**
+ * routes /home
+ * modify one item by id
+ **/
+  router.put('/items/:id', itemControlleur.putOnItemsById);
+   /**
+ * routes /home
+ * delete one item by id
+ **/
+    router.delete('/items/:id', itemControlleur.DeleteOnItemsById);
+/**
  * routes /users
  * get all users
  **/
@@ -46,7 +61,7 @@ router.get('/', itemControlleur.getAllItems);
  router.put('/categories/:id', categoriesControlleur.putOneCategory);
 /**
  * routes /categories/:id
- * 
+ * delete category by id
  **/
  router.delete('/categories/:id', categoriesControlleur.deleteOneCategory);
 /**
