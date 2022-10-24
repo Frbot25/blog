@@ -8,7 +8,7 @@ POST {{baseurl}}/items
 Content-Type: application/json
 
 {
-    "title": "frederic.botella@gmail.com",
+    "title": "Tout sur les jeux vidéos 1",
     "description": "moi",
     "url_image": "https://images.assetsdelivery.com/compings_v2/yupiramos/yupiramos2004/yupiramos200436847.jpg",
     "url_video": "",
@@ -30,7 +30,7 @@ Content-Type: application/json
     "category_id": "1"
 }
 ### --- Supprimer un article par son id
-DELETE  {{baseurl}}/items/3
+DELETE  {{baseurl}}/items/4
 ### --- Afficher tous les users
 GET {{baseurl}}/users
 ### --- Login user
@@ -63,20 +63,49 @@ Content-Type: application/json
 }
 ### --- Supprimer un user par son id
 DELETE {{baseurl}}/users/1
+
+### --- Add new category
+POST {{baseurl}}/categories
+Content-Type: application/json
+
+{
+    "name": "Genshin Inpact",
+    "description": "Tout sur le jeux Genshin Inpact !"
+}
 ### --- Afficher toutes les catégories
 GET {{baseurl}}/categories
 ### --- Afficher unes catégories par son id
 GET {{baseurl}}/categories/1
 ### --- Modifier une catégorie par son id
 PUT {{baseurl}}/categories/1
-### --- Effacer une carte par son id
+Content-Type: application/json
+
+{
+    "name": "Genshin Inpact 2",
+    "description": "Tout sur le jeux Genshin Inpact !"
+}
+### --- Effacer une categorie par son id
 DELETE  {{baseurl}}/categories/1
 ### --- Afficher tous les tags
 GET  {{baseurl}}/tags
+### --- Add new tag
+POST {{baseurl}}/tags
+Content-Type: application/json
+
+{
+    "name": "Rpg",
+    "color": "#f1f1f1"
+}
 ### --- Afficher un tag par son id
 GET  {{baseurl}}/tags/1
 ### --- modifier un tag par son id
-PUT   {{baseurl}}/tags/1
+PUT   {{baseurl}}/tags/4
+Content-Type: application/json
+
+{
+    "name": "Rpg3",
+    "color": "#f1f1f1"
+}
 ### --- Supprimer un tag par son id
-DELETE  {{baseurl}}/tags/1
+DELETE  {{baseurl}}/tags/4
 

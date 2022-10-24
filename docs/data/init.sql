@@ -50,8 +50,8 @@ CREATE TABLE "item"(
 	"url_video" TEXT,
 	createdAt TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updatedAt TIMESTAMPTZ,
-    "user_id" INT NOT NULL REFERENCES "user"(id),
-	category_id INTEGER NOT NULL REFERENCES "category"(id)
+    "user_id" INT NOT NULL REFERENCES "user"(id) ON DELETE CASCADE,
+	category_id INTEGER NOT NULL REFERENCES "category"(id) ON DELETE CASCADE
 );
 
 CREATE TABLE item_has_tag(
@@ -74,7 +74,9 @@ CREATE TABLE user_prefer_item(
 	 "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
  insert into role ("role") values 
-    ('utilisateur');
+    ('utilisateur'),
+	('administrateur')
+	;
 
 insert into category (name, description) values 
     ('Jeux vidéo', 'découvrir les jeux vidéos'),--1

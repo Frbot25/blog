@@ -64,6 +64,11 @@ router.get('/', itemControlleur.getAllItems);
  * delete user by id
  **/
  router.delete('/users/:id', usersControlleur.deleteUserById);
+ /**
+ * routes /categories
+ * Add new category
+ **/
+  router.post('/categories', categoriesControlleur.save);
 /**
  * routes /categories
  * get all categories
@@ -89,6 +94,11 @@ router.get('/', itemControlleur.getAllItems);
  * view all tags
  **/
  router.get('/tags', tagsControlleur.getAllTags);
+ /**
+ * routes /tags/
+ * Add new tag
+ **/
+  router.post('/tags', tagsControlleur.save);
 /**
  * routes /tags/
  * view one tag by id

@@ -1,12 +1,18 @@
 const Item = require('../models/item');
 const itemControlleur = {
     getAllItems: async (request, response) => {
-        const items = await Item.findAllItems();
-        if (items === "") {
-            response.status(200).json('pas de contenu');
-        } else {
-            response.status(200).json(items);
+        try {
+            const items = await Item.findAllItems();
+            if (items === "") {
+                response.status(200).json('pas de contenu');
+            } else {
+                response.status(200).json(items);
+            }
+        }catch(error) {
+            console.trace(error);
+           response.status(500).json(error.message);
         }
+       
         
     },
     getOnItemsById: async (request, response) => {
