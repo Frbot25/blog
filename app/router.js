@@ -3,6 +3,8 @@ const itemControlleur = require('./Controlleurs/itemsControlleur');
 const usersControlleur = require('./Controlleurs/usersControlleur');
 const categoriesControlleur = require('./Controlleurs/categoriesControlleur');
 const tagsControlleur = require('./Controlleurs/tagsControlleur');
+const checkJwt = require('./middlewares/checkJwt');
+const checkAdmin = require('./middlewares/checkAdmin');
 const router = Router();
 /**
  * routes /home
@@ -13,7 +15,7 @@ router.get('/', itemControlleur.getAllItems);
  * routes /item 
  * post create new item 
  **/
- router.post('/items', itemControlleur.save);
+ router.post('/items',checkJwt, itemControlleur.save);
 /**
  * routes /home
  * Get one item by id
@@ -23,17 +25,17 @@ router.get('/', itemControlleur.getAllItems);
  * routes /home
  * modify one item by id
  **/
-  router.put('/items/:id', itemControlleur.putOnItemsById);
+  router.put('/items/:id',checkJwt, itemControlleur.putOnItemsById);
    /**
  * routes /home
  * delete one item by id
  **/
-    router.delete('/items/:id', itemControlleur.DeleteOnItemsById);
+    router.delete('/items/:id',checkJwt, itemControlleur.DeleteOnItemsById);
 /**
  * routes /users
  * get all users
  **/
- router.get('/users', usersControlleur.getAllUsers );
+ router.get('/users',checkJwt, usersControlleur.getAllUsers );
   /**
  * routes /login
  * Login user
@@ -43,32 +45,32 @@ router.get('/', itemControlleur.getAllItems);
  * routes /users
  * get all users
  **/
-  router.post('/users', usersControlleur.registerUser );
+  router.post('/users',checkJwt, usersControlleur.registerUser );
 /**
  * routes /users/:id
  * get one user by id
  **/
- router.get('/users/:id',usersControlleur.getOneUserById)
+ router.get('/users/:id',checkJwt,usersControlleur.getOneUserById)
  /**
  * routes /users/:id
  * get one user by id
  **/
-  router.post('/users',usersControlleur.getOneUserById)
+  router.post('/users',checkJwt,usersControlleur.getOneUserById)
 /**
  * routes /users/:id
  * put one user by id
  **/
- router.put('/users/:id', usersControlleur.updateUserById);
+ router.put('/users/:id',checkJwt, usersControlleur.updateUserById);
 /**
  * routes /users/:id
  * delete user by id
  **/
- router.delete('/users/:id', usersControlleur.deleteUserById);
+ router.delete('/users/:id',checkJwt, usersControlleur.deleteUserById);
  /**
  * routes /categories
  * Add new category
  **/
-  router.post('/categories', categoriesControlleur.save);
+  router.post('/categories',checkJwt, checkAdmin, categoriesControlleur.save);
 /**
  * routes /categories
  * get all categories
@@ -83,12 +85,12 @@ router.get('/', itemControlleur.getAllItems);
  * routes /categories/:id
  * put category by id
  **/
- router.put('/categories/:id', categoriesControlleur.putOneCategory);
+ router.put('/categories/:id',checkJwt,checkAdmin, categoriesControlleur.putOneCategory);
 /**
  * routes /categories/:id
  * delete category by id
  **/
- router.delete('/categories/:id', categoriesControlleur.deleteOneCategory);
+ router.delete('/categories/:id',checkJwt,checkAdmin, categoriesControlleur.deleteOneCategory);
 /**
  * routes /tags/
  * view all tags
@@ -98,7 +100,7 @@ router.get('/', itemControlleur.getAllItems);
  * routes /tags/
  * Add new tag
  **/
-  router.post('/tags', tagsControlleur.save);
+  router.post('/tags',checkJwt,checkAdmin, tagsControlleur.save);
 /**
  * routes /tags/
  * view one tag by id
@@ -108,11 +110,11 @@ router.get('/', itemControlleur.getAllItems);
  * routes /tags/
  * modify one tag by id
  **/
- router.put('/tags/:id', tagsControlleur.putOneTags);
+ router.put('/tags/:id',checkJwt,checkAdmin, tagsControlleur.putOneTags);
 /**
  * routes /tags/
  * delete one tag by id
  **/
- router.delete('/tags/:id', tagsControlleur.deleteOneTags);
+ router.delete('/tags/:id',checkJwt,checkAdmin, tagsControlleur.deleteOneTags);
 
 module.exports = router;

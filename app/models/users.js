@@ -88,6 +88,7 @@ class Users {
                 id: rows[0].id,
                 username: rows[0].user_name,
                 email: rows[0].email,
+                roleId: rows[0].role_id,
                 createdAt: rows[0].createdat
             };
             return userSecure;

@@ -38,7 +38,7 @@ const usersControlleur = {
         console.log("body dans controller", body)
         const user = await new Users(body).Login();
         console.log("user dans controlleur login",user)
-        const accessToken = jwt.makeToken(user.id);
+        const accessToken = jwt.makeToken(user.id, user.roleId);
         console.log(accessToken);
         const refreshToken = jwt.refreshToken(user.id);
         response.header({'Authorization': accessToken,'refreshToken': refreshToken}).send({accessToken: accessToken, refreshToken: refreshToken,user,});
